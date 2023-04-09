@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alvis.io</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="{{url_for('static', filename = 'css/sample.css')}}" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename = 'image/icon.png')}}">
+
+</head>
+
+<body style="background: url({{ url_for('static', filename='image/background1.jpg') }}); background-size: 100%;background-repeat:no-repeat;background-attachment: fixed;">
+  <nav class="navbar navbar-expand-lg" style="background-image: linear-gradient(to right, #9F8C76 , beige);"
+    data-bs-theme="light">
+    <div class="container-fluid">
+      <a href="./index.html">
+        <img class="image"
+          src="{{url_for('static', filename = 'image/icon.png')}}"
+          alt="Mental health" width="80px" height="80px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" style="margin-left: 10px;" aria-current="page" href="{{ url_for('home') }}">Home &nbsp;&nbsp;|</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('community') }}">Community &nbsp;&nbsp;|</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('research') }}">Research</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="form_div" id="bodygrad" style="margin-top:2%;">
+    <form action="{{ url_for('predict') }}" method="post">
+      <div class="card" style="background-color: #ccccff; width: 40rem;height: 22rem;">
+        <div class="card-body">
+          <h5 class="card-title">What are your current thoughts ?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <textarea name="form_thought" cols="70" rows="10" placeholder="Enter Here"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem; margin-top: 30px;">
+        <div class="card-body">
+          <h5 class="card-title">1. Enter your age:</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="number" name="form_age">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #d9ffcc; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">2. Enter your Gender:</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_gender">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffcce6;width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">3. Are you self-employed?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_se">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">4. Do you have any family history of mental health issues?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_famhis">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #d9ffcc; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">5. Is there an interference of your work life into personal life?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_work">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffcce6;width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">6. Enter an approximate estimate of member count of your organization:</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_employees">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">7. Is the mode of work remote?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_remote">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #d9ffcc; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">8. Is your organization based on Technology?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_tech">
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background-color: #ffcce6;width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">9. Does your organization offer benefits?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_benefits">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">10. Does your organization offer Care Options?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_care">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #d9ffcc; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">11. Does your Organization conduct Wellness programs?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_wellness">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffcce6;width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">12. Are you comfortable reaching out for help?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_seekhelp">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">13. Do you have Anonymity in your workspace?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_Anonymity">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #d9ffcc; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">14. Do you have sufficient leave approvals?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_leave">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffcce6;width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">15. Any mental health consequence that you relate to?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_mental">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">16. Is your physical health upright?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_physical">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #d9ffcc; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">17. Are ypu close with your coworkers?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_coworkers">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffcce6; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">18. Does your supervisor empathize with the concept of mental health?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_supervisor">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">19. Do you think you would be able to express your mental health condition properly?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_mhi">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #d9ffcc; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">20. Do you think you would be able to express your physical health condition properly?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_phi">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffcce6;width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">21. Do you have an understanding of mental health v/s physical health?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_mvp">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background-color: #ffd9b3; width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">22. Did you observe any consequences pertaining to mental health?</h5>
+          <div class="form-check">
+            <!--input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" -->
+            <input type="text" name="form_obs">
+          </div>
+        </div>
+      </div>
+      <div>
+        <input style="margin-left: 45% ;"type="submit" class="btn btn-primary btn-lg" />
+      </div>
+    </form>
+  </div>
+
+  
+  </div>
+  <!-- Footer -->
+  <!-- <div class="container bg-dark"> -->
+    <footer class="py-3 my-4" style="background-color: black;height: 35%;position: relative;top:25px">
+        <div class="text-center text-body-secondary">
+        <span style="font-size: large;color: white;">Alvis.io</span><br>
+        <img src="{{url_for('static', filename = 'image/icon.png')}}" width="100px" height="100px" style="border-radius: 40%;">
+        <br>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="ms-3"  ><a class="text-body-secondary" href="#"><span style="color:white;">About Us</span></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#" style="color:white;"><span style="color:white;">Contact Us</span></a></li>
+    
+          </ul></div>
+      <div class="text-center text-body-secondary">
+          <ul class="nav justify-content-center">
+            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/facebook.png')}}" width="40px" height="40px"></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/gmail.png')}}" width="40px" height="40px"></svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/instagram.png')}}" width="40px" height="40px"></svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/linkedin.png')}}" width="40px" height="40px"></svg></a></li>
+          </ul>
+      </div>
+    </footer>
+<!-- </div> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <script>
+      var count=0
+      function assign_color(count){
+        if(count%3==0){
+          return "background-clor: #ffcce6; width: 40rem;"
+        }
+        else if(count%3==1){
+          return "background-clor: #d9ffcc; width: 40rem;"
+        }
+        else if(count%3==2){
+          return "background-clor: #ffd9b3; width: 40rem;"
+        }
+      }
+    </script>
+</body>
+
+</html>

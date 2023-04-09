@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alvis.io</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="{{url_for('static', filename = 'css/sample.css')}}" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename = 'image/icon.png')}}">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg" style="background-image: linear-gradient(to right, #9F8C76 , beige);"
+    data-bs-theme="light">
+    <div class="container-fluid">
+      <a href="#">
+        <img class="image"
+          src="{{url_for('static', filename = 'image/icon.png')}}"
+          alt="Mental health" width="80px" height="80px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" style="margin-left: 10px;" aria-current="page" href="{{ url_for('home') }}">Home &nbsp;&nbsp;|</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('community') }}">Community &nbsp;&nbsp;|</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('research') }}">Research</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <body>
+    <div style="margin-left: 20%; margin-right: 20%;margin-top: 3%;">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="card h-100" >
+        <img src="{{url_for('static', filename = 'image/who.jpg')}}" class="card-img" alt="..." height="200px" padding:2px style="object-fit: fill;">
+          <div class="card-body">
+            <h4 class="card-title">World Health Organization</h4>
+            <p class="card-text">Regarding mental health, the WHO defines it as a state of well-being in which an individual realizes their own abilities, can cope with the normal stresses of life, can work productively, and is able to make a contribution to their community. </p>
+            <a style="position: relative;top:3%" href="https://www.who.int/health-topics/mental-health#tab=tab_1" class="btn btn-primary">Go to Website</a>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <div class="card h-100">
+          <img src="{{url_for('static', filename = 'image/page2_nami.jpg')}}" class="card-img-top" alt="..." height="200px" padding:2px style="object-fit: fill;">
+          <div class="card-body">
+            <h4 class="card-title">National Alliance on Mental Illness</h4>
+            <p class="card-text">The National Alliance on Mental Illness (NAMI) is a US-based grassroots mental health organization dedicated to improving the lives of individuals and families affected by mental illness.</p>
+            <a style="position: relative;top:9%" href="https://nami.org/Home" class="btn btn-primary">Go to Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="padding-top: 10px;">
+      <div class="col d-flex justify-content-center">
+        <div class="card h-100">
+        <img src="{{url_for('static', filename = 'image/page2_beyondblue.png')}}" class="card-img-top" alt="..." height="200px;padding:2px;">
+          <div class="card-body">
+            <h4 class="card-title">Beyond Blue</h4>
+            <p class="card-text">Beyond Blue provides information and support to individuals and families affected by anxiety, depression, and other mental health conditions through a range of services, including online forums, chat and email support, and a telephone helpline.</p>
+            <a style="position: relative;top:3%" href="https://www.beyondblue.org.au/" class="btn btn-primary">Go to Website</a>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <div class="card h-100">
+        <img src="{{url_for('static', filename = 'image/page2_mentalforum.jpg')}}" class="card-img-top" alt="..." height="200px;padding:2px;">
+          <div class="card-body">
+            <h4 class="card-title">Mental Heath Forum
+            </h4>
+            <p class="card-text">The mental health forums provide a safe and supportive space for people to discuss their experiences, share coping strategies, and seek guidance from others who may have gone through similar situations.</p>
+            <a style="position: relative;top:10%" href="https://www.mentalhealthforum.net/" class="btn btn-primary">Go to Website</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <footer class="py-3 my-4" style="background-color: black;height: 35%;position: relative;top:25px">
+      <div class="text-center text-body-secondary">
+      <span style="font-size: large;color: white;">Alvis.io</span><br>
+      <img src="{{url_for('static', filename = 'image/icon.png')}}" width="100px" height="100px" style="border-radius: 40%;">
+      <br>
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="ms-3"  ><a class="text-body-secondary" href="#"><span style="color:white;">About Us</span></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="#" style="color:white;"><span style="color:white;">Contact Us</span></a></li>
+  
+        </ul></div>
+    <div class="text-center text-body-secondary">
+        <ul class="nav justify-content-center">
+          <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/facebook.png')}}" width="40px" height="40px"></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/gmail.png')}}" width="40px" height="40px"></svg></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/instagram.png')}}" width="40px" height="40px"></svg></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/linkedin.png')}}" width="40px" height="40px"></svg></a></li>
+        </ul>
+    </div>
+  </footer>
+  </div>
+  </body>

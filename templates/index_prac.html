@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{{ url_for('predict') }}" method="post">
+        <label>Enter your Age:
+            <input type="number" name="form_age">
+        </label><br>
+        <label>Enter your Gender:
+            <input type="text" name="form_gender">
+        </label><br>
+        <label>Enter your Self Employeed:
+            <input type="text" name="form_se">
+        </label><br>
+        <label>Enter your FamilyHistory:
+            <input type="text" name="form_famhis">
+        </label><br>
+        <label>Enter your Work Interference:
+            <input type="text" name="form_work">
+        </label><br>
+        <label>Enter your No of Employees:
+            <input type="text" name="form_employees">
+        </label><br>
+        <label>Enter remote work:
+            <input type="text" name="form_remote">
+        </label><br>
+        <label>Enter tech company:
+            <input type="text" name="form_tech">
+        </label><br>
+        <label>Enter your Benefits:
+            <input type="text" name="form_benefits">
+        </label><br>
+        <label>Enter your Care Options:
+            <input type="text" name="form_care">
+        </label><br>
+        <label>Enter your Wellness program:
+            <input type="text" name="form_wellness">
+        </label><br>
+        <label>Enter your seek help:
+            <input type="text" name="form_seekhelp">
+        </label><br>
+        <label>Enter your Anonymity:
+            <input type="text" name="form_Anonymity">
+        </label><br>
+        <label>Enter your Leaves approval:
+            <input type="text" name="form_leave">
+        </label><br>
+        <label>Enter your mental health:
+            <input type="text" name="form_mental">
+        </label><br>
+        <label>Enter your Physical health:
+            <input type="text" name="form_physical">
+        </label><br>
+        <label>Enter your coworkers:
+            <input type="text" name="form_coworkers">
+        </label><br>
+        <label>Enter your supervisor:
+            <input type="text" name="form_supervisor">
+        </label><br>
+        <label>Enter your mental health interview:
+            <input type="text" name="form_mhi">
+        </label><br>
+        <label>Enter your pyhsical health interview:
+            <input type="text" name="form_phi">
+        </label><br>
+        <label>Enter your mental vs physical:
+            <input type="text" name="form_mvp">
+        </label><br>
+        <label>Enter your obs consequences:
+            <input type="text" name="form_obs">
+        </label><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+
+{{ pred }}
+</html>

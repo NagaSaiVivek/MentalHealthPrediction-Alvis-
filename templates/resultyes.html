@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alvis.io</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="{{url_for('static', filename = 'css/sample.css')}}" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename = 'image/icon.png')}}">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg" style="background-image: linear-gradient(to right, #9F8C76 , beige); "
+    data-bs-theme="light">
+    <div class="container-fluid">
+      <a href="#">
+        <img class="image"
+          src="{{url_for('static', filename = 'image/icon.png')}}"
+          alt="Mental health" width="80px" height="80px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" style="margin-left: 10px;" aria-current="page" href="#">Home &nbsp;&nbsp;|</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('community') }}">Community &nbsp;&nbsp;|</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Research</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" align="center">
+    <h2>You should consider taking a break and get yourself together.</h2>
+    <div style="width: 70%; margin-top: 4%;">
+        <div style="float: left;width: 50%;">
+            <p align="left">Alvis thinks that you might wanna take a break and lighten up a bit here are some recommended practices</p>
+            <ul>
+                <li align="left">Talk to your loved ones (Family, friends, etc)</li>
+                <li align="left">Consult a counsellor or a psychiartists who will be able to help you identify the problem</li>
+                <li align="left">Let yor feelings out to your loved ones. Expressing your pent up feelings will lighten your mood. Others will be able to relate to your situation and lend you a hand.</li>
+                <li align="left">Try involving in your favourite activities. Go watch movies, flex those muscles, cook up a storm, etc. You definitely got these.</li>
+            </ul>
+        </div>
+        <div style="float: right;width: 50%;"><img src="{{ url_for('static', filename = 'image/mental_health.jpg') }}" align="right"></div>
+    </div>
+  </div>
+  <div align="center" style="margin-top: 30%;">
+    <em style="font-size: large;font-weight: 600;">{{ message }}</em>
+  </div>
+  <div align="center" style="margin-top: 2%;">
+    <span>Check out our <a href="{{ url_for('community') }}">Community page</a> to make yourself better</span>
+    </div>
+
+
+
+  <!-- Footer -->
+  <footer class="py-3 my-4" style="background-color: black;height: 35%;position: relative;top:25px">
+    <div class="text-center text-body-secondary">
+    <span style="font-size: large;color: white;">Alvis.io</span><br>
+    <img src="{{url_for('static', filename = 'image/icon.png')}}" width="100px" height="100px" style="border-radius: 40%;">
+    <br>
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="ms-3"  ><a class="text-body-secondary" href="#"><span style="color:white;">About Us</span></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#" style="color:white;"><span style="color:white;">Contact Us</span></a></li>
+
+      </ul></div>
+  <div class="text-center text-body-secondary">
+      <ul class="nav justify-content-center">
+        <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/facebook.png')}}" width="40px" height="40px"></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/gmail.png')}}" width="40px" height="40px"></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/instagram.png')}}" width="40px" height="40px"></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{url_for('static', filename = 'image/linkedin.png')}}" width="40px" height="40px"></svg></a></li>
+      </ul>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
